@@ -13,7 +13,17 @@ Passare come parametri GET name, mail e age
 $name = $_GET['username'];
 $email = $_GET['email'];
 $age = $_GET['age'];
-var_dump($_GET['age']);
+
+
+var_dump(is_numeric($age));
+
+if (strlen($name) >= 3 && strpos($email, '@') && strpos($email, '.') && is_numeric($age)) {
+    $risposta = 'Accesso riuscito';
+} else {
+    $risposta = 'Accesso negato';
+}
+
+
 ?>
 
 
@@ -37,6 +47,8 @@ var_dump($_GET['age']);
         <input type="text" name="age" id="age" placeholder="inserisci la tua età">
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <h2> <?php echo $risposta ?></h2>
 </body>
 
 </html>
