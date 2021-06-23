@@ -1,7 +1,7 @@
 <?php
 
-$_GET['guest_name'];
-var_dump($_GET['guest_name']);
+$new_guest = $_GET['guest_name'];
+//var_dump($_GET['guest_name']);
 
 $invitati = [
     'andrea',
@@ -10,3 +10,8 @@ $invitati = [
     'luca',
     'franco',
 ];
+if (in_array($new_guest, $invitati)) {
+    echo 'ok';
+} else {
+    echo 'ko';
+}
