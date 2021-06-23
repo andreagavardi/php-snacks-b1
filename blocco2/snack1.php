@@ -34,6 +34,8 @@ $ads = [
 
 ];
 
+
+
 ?>
 
 
@@ -49,6 +51,14 @@ $ads = [
 
 <body>
 
+    <?php
+    $ads_active = array_filter($ads, function ($val) {
+        return $val['is_active'];
+    });
+    //var_dump($ads_active);
+    $random_ad = rand(0, count($ads_active));
+    var_dump($ads_active[$random_ad - 1]);
+    ?>
 
 
 </body>
