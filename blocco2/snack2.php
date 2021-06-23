@@ -17,7 +17,8 @@ Se la nostra query è contenuta nella lista degli invitati stampare ok, altrimen
 
 <body>
     <form action="./snack2_get.php" method="get">
-        <input type="text" name="guest_name" id="guest_name">
+        <input type="text" name="guest_name" id="guest_name" placeholder="inserisci il tuo nome">
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </body>
 
