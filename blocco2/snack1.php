@@ -19,7 +19,7 @@ $ads = [
     [
         'image_path' => 'https://thumbs.dreamstime.com/z/back-to-school-sale-background-chalkboard-sale-percentages-marketing-poster-color-pencils-96751666.jpg',
         'link' => 'https://codepen.io',
-        'is_active' => false,
+        'is_active' => true,
     ],
     [
         'image_path' => 'https://foodsecurityfoodjustice.files.wordpress.com/2016/11/beyond-the-omlette-1.jpg',
@@ -48,6 +48,13 @@ $ads = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>snack 1</title>
 </head>
+<style>
+    img {
+        object-fit: contain;
+        height: 200px;
+        width: 200px;
+    }
+</style>
 
 <body>
 
@@ -55,10 +62,17 @@ $ads = [
     $ads_active = array_filter($ads, function ($val) {
         return $val['is_active'];
     });
-    //var_dump($ads_active);
-    $random_ad = rand(0, count($ads_active));
-    var_dump($ads_active[$random_ad - 1]);
+    //var_dump(array_values($ads_active));
+    $random = rand(0, count($ads_active) - 1);
+    $random_ad = array_values($ads_active)[$random];
+    //var_dump($random_ad);
+    //var_dump($random_ad);
     ?>
+
+    <a href="<?php echo $random_ad['link'] ?>">
+        <img src="<?php echo $random_ad['image_path'] ?>" alt="ad">
+    </a>
+
 
 
 </body>
